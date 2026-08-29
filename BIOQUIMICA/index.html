@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Resultado de Bioquímica Clínica — Proteinuria 24h</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hoja">
+
+  <!-- Encabezado del laboratorio (editable) -->
+  <div class="encabezado">
+    <input type="text" id="labNombre" class="input-titulo" value="H.R.D. MEDICINA TROPICAL">
+    <input type="text" id="labSubtitulo" class="input-subtitulo" value='"DR. JULIO CESAR DEMARINI CARO"'>
+    <input type="text" id="labServicio" class="input-servicio" value="RESULTADO DE BIOQUIMICA CLINICA">
+  </div>
+
+  <hr class="regla">
+
+  <!-- Datos del paciente -->
+  <div class="datos-paciente">
+    <div class="fila-dato">
+      <label>Nombre :</label>
+      <input type="text" id="nombre" placeholder="">
+    </div>
+    <div class="fila-dato">
+      <label>Fecha :</label>
+      <input type="text" id="fecha" readonly>
+    </div>
+    <div class="fila-dato doble">
+      <div class="mitad">
+        <label>Protocolo :</label>
+        <input type="text" id="protocolo" placeholder="">
+      </div>
+      <div class="mitad">
+        <label>Tipo de muestra:</label>
+        <input type="text" id="tipoMuestra" value="Orina" readonly>
+      </div>
+    </div>
+  </div>
+
+  <hr class="regla">
+
+  <!-- Tabla de resultados -->
+  <table class="tabla-resultados">
+    <thead>
+      <tr>
+        <th class="col-ensayo">Ensayo</th>
+        <th class="col-resultado">Resultado</th>
+        <th class="col-unidades">Unidades</th>
+        <th class="col-ref">V. de Ref.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DIURESIS</td>
+        <td><input type="number" id="diuresis" step="any" min="0" placeholder="" class="input-resultado"></td>
+        <td>mL</td>
+        <td class="ref-fija">500 a 1500</td>
+      </tr>
+      <tr>
+        <td>PT ORINA 24 HS</td>
+        <td><span id="resultadoCalculado" class="valor-calculado">—</span></td>
+        <td>mg/24 hs</td>
+        <td class="ref-fija" id="refPt">30 a 140</td>
+      </tr>
+      <tr>
+        <td>PROT. EN ORINA</td>
+        <td><input type="number" id="proteina" step="any" min="0" placeholder="" class="input-resultado"></td>
+        <td>mg/dL</td>
+        <td class="ref-fija">0 a 25</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="estado" id="estado"></div>
+
+  <!-- Registros guardados -->
+  <div class="guardados no-imprimir">
+    <label for="listaRegistros">Registros guardados:</label>
+    <select id="listaRegistros" onchange="cargarRegistro()">
+      <option value="">— Seleccionar —</option>
+    </select>
+    <button onclick="eliminarRegistro()" type="button">Eliminar</button>
+  </div>
+
+  <div class="acciones no-imprimir">
+    <button onclick="guardarEImprimir()">🖶 IMPRIMIR</button>
+    <button onclick="limpiarFormulario()" type="button">🧹 LIMPIAR</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
