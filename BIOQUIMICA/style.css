@@ -1,0 +1,270 @@
+:root{
+  --azul-titulo:#3a5a94;
+  --tinta:#1a1a1a;
+  --linea:#b9b9b9;
+  --fondo:#eceded;
+  --papel:#fbfbfa;
+  --resultado:#111;
+  --ok:#2e7d4f;
+  --bajo:#b5533c;
+  --alto:#b5533c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--tinta);
+  font-family:'Roboto', Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:36px 16px;
+}
+
+.hoja{
+  width:100%;
+  max-width:620px;
+  background:var(--papel);
+  padding:38px 42px 44px;
+  border-radius:2px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.05);
+}
+
+/* ---- Encabezado ---- */
+.encabezado{
+  text-align:center;
+  margin-bottom:18px;
+}
+.input-titulo, .input-subtitulo, .input-servicio{
+  display:block;
+  width:100%;
+  text-align:center;
+  border:none;
+  background:transparent;
+  color:var(--azul-titulo);
+  font-family:'Roboto', Arial, sans-serif;
+  margin:0 auto;
+}
+.input-titulo{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:0.01em;
+}
+.input-subtitulo{
+  font-size:17px;
+  font-weight:700;
+  margin-top:2px;
+}
+.input-servicio{
+  font-size:19px;
+  font-weight:700;
+  margin-top:20px;
+}
+.input-titulo:focus, .input-subtitulo:focus, .input-servicio:focus{
+  outline:none;
+  background:#f0f3fa;
+}
+
+.regla{
+  border:none;
+  border-top:1px solid var(--linea);
+  margin:18px 0;
+}
+
+/* ---- Datos del paciente ---- */
+.datos-paciente{
+  font-size:16px;
+}
+.fila-dato{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:12px;
+}
+.fila-dato label{
+  font-weight:400;
+  color:var(--tinta);
+  white-space:nowrap;
+  min-width:78px;
+}
+.fila-dato input{
+  flex:1;
+  border:none;
+  border-bottom:1px solid transparent;
+  background:transparent;
+  font-family:'Roboto', Arial, sans-serif;
+  font-size:16px;
+  font-weight:700;
+  color:var(--tinta);
+  padding:2px 4px;
+}
+.fila-dato input:focus{
+  outline:none;
+  border-bottom:1px solid var(--azul-titulo);
+  background:#f7f8fb;
+}
+.fila-dato.doble{
+  gap:24px;
+}
+.fila-dato.doble .mitad{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex:1;
+}
+.fila-dato.doble label{
+  min-width:auto;
+}
+
+/* ---- Tabla de resultados ---- */
+.tabla-resultados{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+  font-size:15px;
+}
+.tabla-resultados th{
+  text-align:left;
+  font-weight:700;
+  color:var(--tinta);
+  padding:6px 6px 10px;
+  border-bottom:1px solid var(--linea);
+  font-size:15px;
+}
+.tabla-resultados td{
+  padding:12px 6px;
+  vertical-align:middle;
+  border-bottom:none;
+}
+.col-ensayo{width:34%;}
+.col-resultado{width:20%;}
+.col-unidades{width:18%;}
+.col-ref{width:28%;}
+
+.input-resultado{
+  width:80px;
+  border:none;
+  border-bottom:1.5px solid var(--azul-titulo);
+  background:transparent;
+  font-family:'Roboto', Arial, sans-serif;
+  font-size:16px;
+  font-weight:700;
+  text-align:center;
+  padding:2px 4px;
+  color:var(--tinta);
+}
+.input-resultado:focus{
+  outline:none;
+  background:#f7f8fb;
+}
+
+.valor-calculado{
+  display:inline-block;
+  min-width:60px;
+  text-align:center;
+  font-weight:700;
+  font-size:17px;
+  color:var(--resultado);
+  border-bottom:1.5px solid var(--tinta);
+  padding-bottom:2px;
+}
+
+.ref-fija{
+  font-size:14px;
+  color:#444;
+  white-space:nowrap;
+}
+
+/* ---- Estado / interpretación ---- */
+.estado{
+  margin-top:18px;
+  font-size:14px;
+  font-weight:700;
+  text-align:center;
+  min-height:20px;
+}
+.estado.normal{color:var(--ok);}
+.estado.fuera{color:var(--alto);}
+
+/* ---- Registros guardados ---- */
+.guardados{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+  font-size:14px;
+}
+.guardados label{
+  white-space:nowrap;
+}
+.guardados select{
+  flex:1;
+  padding:6px 8px;
+  font-family:'Roboto', Arial, sans-serif;
+  font-size:14px;
+  border:1px solid var(--linea);
+  border-radius:3px;
+  background:#fff;
+}
+
+/* ---- Acciones ---- */
+.acciones{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
+button{
+  flex:1;
+  padding:12px;
+  font-family:'Roboto', Arial, sans-serif;
+  font-size:14px;
+  font-weight:400;
+  background:var(--azul-titulo);
+  color:#fff;
+  border:1.5px solid var(--azul-titulo);
+  border-radius:3px;
+  cursor:pointer;
+  transition:background 0.15s ease, color 0.15s ease;
+}
+button:hover{
+  background:#fff;
+  color:var(--azul-titulo);
+  font-weight:700;
+}
+.formula-nota{
+  margin-top:16px;
+  font-size:11.5px;
+  color:#888;
+  text-align:center;
+  font-style:italic;
+}
+
+/* ---- Impresión en A5 ---- */
+@media print{
+  @page{
+    size:A5;
+    margin:10mm;
+  }
+  body{
+    background:#fff;
+    padding:0;
+  }
+  .hoja{
+    background:#fff !important;
+    box-shadow:none;
+    max-width:100%;
+    padding:6mm 8mm;
+
+  }
+  .no-imprimir{
+    display:none !important;
+  }
+  input{
+    border-bottom:none !important;
+  }
+  .valor-calculado{
+    border-bottom:none !important;
+  }
+  .input-titulo, .input-subtitulo, .input-servicio{
+    color:#1a1a1a !important;
+  }
+}
