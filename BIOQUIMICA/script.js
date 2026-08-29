@@ -119,4 +119,5 @@ function limpiarFormulario(){
   document.getElementById('resultadoCalculado').textContent = '—';
   document.getElementById('estado').textContent = '';
   document.getElementById('listaRegistros').value = '';
+  
 }
