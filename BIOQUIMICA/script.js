@@ -113,9 +113,7 @@ function guardarEImprimir(){
 /* LIMPIAR FORMULARIO (único botón que limpia)*/
 function limpiarFormulario(){
   document.getElementById('nombre').value = '';
-  /*document.getElementById('fecha').value = '';*/
   document.getElementById('protocolo').value = '';
-  document.getElementById('tipoMuestra').value = '';
   document.getElementById('diuresis').value = '';
   document.getElementById('proteina').value = '';
   document.getElementById('resultadoCalculado').textContent = '—';
