@@ -259,7 +259,7 @@ button:hover{
 /* ---- Impresión ---- */
 @media print{
   @page{
-    size:A5;
+    size:A5 landscape;
     margin:10mm;
   }
   body{
